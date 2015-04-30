@@ -17,17 +17,17 @@ angular.module('calorie.controllers', [])	//to use this controller neeed to call
 
 //controller for the food template
 
-.controller('FoodsCtrl', function($scope,$rootScope,Projects, $stateParams) {
-	$rootScope.count = 0;
-  categories = ['Drinks', 'Vegetables', 'Fruit', 'Meats'];
+.controller('FoodsCtrl', function($scope,$rootScope,Projects, $stateParams) {			//the contrller named FoodsCtrl
+	$rootScope.count = 0;																//inialises the count to 0, which will be the total calories
+  categories = ['Drinks', 'Vegetables', 'Fruit', 'Meats'];								//the different categories for the food items
 
   
 	//adds up the total calories each time calories are added
-	$scope.function1 = function(cals) {
+	$scope.function1 = function(calorie) {													//takes in the variable calorie and adds this to the total calories
 	     
-		 $rootScope.count = $scope.count + cals;
+		 $rootScope.count = $scope.count + calorie;
 		 //saves the value of the count
-		  Projects.save($rootScope.count);
+		  Projects.save($rootScope.count);													//saves the value of total calories accross states
 	};
 	
 	//resets the calories to 0	//called by the reset button
@@ -36,13 +36,13 @@ angular.module('calorie.controllers', [])	//to use this controller neeed to call
 		 $rootScope.count = 0;
 	};
 	//shows the total in an alert box // called by the done button
-	//not really used anymore
+	//was only used in earlier versions
 	$scope.functionDone = function(tot){
 		alert(tot);
 	};
   
   
-  //all the foods, their images and their calories to be added to the states
+  //list of all the foods, their image locations and their calories to be added to the states
   Foods = [
     [
       {title: "Milk",		 imgsrc: "img/Milk.jpg", 	calories: 50},

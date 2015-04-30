@@ -3,21 +3,21 @@
     <ion-nav-bar class="bar-assertive">
       <ion-nav-back-button></ion-nav-back-button>
 
-      <ion-nav-buttons side="left">
-        <button class="button button-icon button-clear ion-arrow-swap" menu-toggle="left"></button>
+      <ion-nav-buttons side="left">														<!--adds a navigation button to the left-->
+        <button class="button button-icon button-clear ion-arrow-swap" menu-toggle="left"></button>	<!--sets the icon for the navigation button-->
       </ion-nav-buttons>
     </ion-nav-bar>
-    <ion-nav-view name="menuContent"></ion-nav-view>
+    <ion-nav-view name="menuContent"></ion-nav-view>							<!--puts the name of the view as menu content-->
   </ion-side-menu-content>
 
-  <ion-side-menu side="left">
-    <ion-header-bar class="bar-assertive">
-      <h1 class="title">Foods</h1>
+  <ion-side-menu side="left">											<!--creates the left side menu-->
+    <ion-header-bar class="bar-assertive">								<!--sets the header bar up as a red bar-->
+      <h1 class="title">Foods</h1>										<!--Sets the title of the menu-->
     </ion-header-bar>
     <ion-content>
       <ion-list>
-      <ion-item ng-repeat="category in categories" nav-clear menu-close ng-href="#/app/Foods/{{categories.indexOf(category)}}">
-          {{ category }}
+       <ion-item ng-repeat="category in categories" nav-clear menu-close ng-href="#/app/Foods/{{categories.indexOf(category)}}">
+          <button class="button button-icon" >{{ category }}</button>
         </ion-item>
       </ion-list>
     </ion-content>
