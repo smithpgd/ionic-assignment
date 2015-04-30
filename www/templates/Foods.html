@@ -1,19 +1,19 @@
 
 
 	
-<ion-view class="frame_look_feel" view-title="{{ category }} ">
+<ion-view class="frame_look_feel " view-title="{{ category }} " >
 
   <ion-content> 
     <ion-list>
 	<div ng-controller="FoodsCtrl" >
 	
-        <div class="list card"  ng-repeat="Food in Foods">												<!--creates a list of cards for each of the Food items in the Food array of the controller-->
+        <div class="list card "  ng-repeat="Food in Foods">												<!--creates a list of cards for each of the Food items in the Food array of the controller-->
 			<div class="item item-avatar">																	<!--gives each card the ability to have an icon associated with it-->
 				<img src ={{Food.imgsrc}}>  																<!--sets the image for each card-->
 					{{ Food.title }} , Calories : {{Food.calories}}											<!--prints out the title of the food and its calories for each food item-->
 				<br>
 				</br>
-				<button ng-click="function1({{Food.calories}})"   class="button button-small button-balanced" >	<!--creates a button that calls function1 which adds the current calories to the total calories-->
+				<button ng-click="function1({{Food.calories}})"   class="button button-small button-balanced ion-plus" >	<!--creates a button that calls function1 which adds the current calories to the total calories-->
 				Click To Add 	
 				</button>
 			
@@ -25,11 +25,11 @@
 			</div>
 	    </div>
 	    <div class ="center list card">																			<!--creates a list card for the two final buttons on each state-->
-			<button ng-click="functionReset()" class="button button-positive" style="float: right;">			<!--calls the reset function on click which sets the calories to 0-->
+			<button ng-click="functionReset()" class="button button-positive ion-power" style="float: right;">			<!--calls the reset function on click which sets the calories to 0-->
 			Reset
 			</button>
 		
-			<button ng-click="functionDone(count)" class="button button-positive" style="float: right;">		<!--calls the function done, which just shows an alert showing the total calories -->
+			<button ng-click="functionDone(count)" class="button button-positive ion-information-circled" style="float: right;">		<!--calls the function done, which just shows an alert showing the total calories -->
 			Done
 			</button>
 		</div>
