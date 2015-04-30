@@ -2,9 +2,9 @@
 
   <ion-content> 
     <ion-list>
-	<div ng-controller="FoodsCtrl" >
+	<div ng-controller="FoodsCtrl" >																		<!--this div uses the controller FoodsCtrl-->
 	
-        <div class="list card "  ng-repeat="Food in Foods">												<!--creates a list of cards for each of the Food items in the Food array of the controller-->
+        <div class="list card "  ng-repeat="Food in Foods">													<!--creates a list of cards for each of the Food items in the Food array of the controller-->
 			<div class="item item-avatar">																	<!--gives each card the ability to have an icon associated with it-->
 				<img src ={{Food.imgsrc}}>  																<!--sets the image for each card-->
 					{{ Food.title }} , Calories : {{Food.calories}}											<!--prints out the title of the food and its calories for each food item-->
@@ -14,8 +14,10 @@
 				Click To Add 	
 				</button>
 			
-				<div  style="float:right;">																		
+				<div  style="float:right;">																		<!-- this div will stay to the right of the screen-->
+					<i class="icon ion-arrow-down-c"></i>														<!-- adds an arrow that points down-->
 					<b>Total Calories:
+					
 						<input type="number" ng-model="count" style="float: right;"/>							<!--prints out the total calories, (shouldnt be an imput type but could only get it--> 
 					</b>																						<!--to work with inputs for some reason)-->
 				</div>

@@ -16,8 +16,9 @@
     </ion-header-bar>
     <ion-content>
       <ion-list>
-       <ion-item ng-repeat="category in categories" nav-clear menu-close ng-href="#/app/Foods/{{categories.indexOf(category)}}">
-          <button class="button button-icon" >{{ category }}</button>
+       <ion-item ng-repeat="category in categories" nav-clear menu-close ng-href="#/app/Foods/{{categories.indexOf(category)}}">	<!--shows all the categories-->
+          <button class="button button-clear button-positive " >{{ category }}</button>						<!-- a button that shows all the foods in the slected category-->
+		  <button class="button  button-clear icon ion-arrow-right-c"></button>								<!-- a button that just has an icon, which is an arrow pointing right-->
         </ion-item>
       </ion-list>
     </ion-content>

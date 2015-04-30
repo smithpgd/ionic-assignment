@@ -5,6 +5,10 @@
 
 button {
     text-align: right;
+    border-style: solid;
+    border: 2px solid;
+    border-radius: 25px;
+
 }
 
 h3 {
