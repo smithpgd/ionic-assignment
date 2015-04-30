@@ -15,3 +15,6 @@ category in the side menu.
 
 The total calories are displayed in each card as that was the only way i could get the total calories to dispaly correctly.
 
+Click "Click to Add" to add the calories of the current item to the total calories
+
+Each page has a reset button to set the total calories to 0
