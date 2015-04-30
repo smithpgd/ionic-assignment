@@ -1,45 +1,47 @@
 angular.module('calorie.controllers', [])	//to use this controller neeed to call ng-app="calorie" which is fdone in the index
 
 .controller('AppCtrl', function($scope) {
-  $scope.categories = ['Drinks', 'Vegetables', 'Fruit', 'Meats'];
+	$scope.categories = ['Drinks', 'Vegetables', 'Fruit', 'Meats'];
   
 })
+
 //taken from the todo app, to remember the total calories
 .factory('Projects', function() {
-  return {
+	return {
     
     save: function(projects) {
       window.localStorage['projects'] = angular.toJson(projects);
     },
     
-  }
+	}
 })
 
 //controller for the food template
 
 .controller('FoodsCtrl', function($scope,$rootScope,Projects, $stateParams) {			//the contrller named FoodsCtrl
 	$rootScope.count = 0;																//inialises the count to 0, which will be the total calories
-  categories = ['Drinks', 'Vegetables', 'Fruit', 'Meats'];								//the different categories for the food items
+																						//the root scope is the scope for all the states
+    categories = ['Drinks', 'Vegetables', 'Fruit', 'Meats'];								//the different categories for the food items
 
-  
+	
 	//adds up the total calories each time calories are added
-	$scope.function1 = function(calorie) {													//takes in the variable calorie and adds this to the total calories
+	$scope.addCalories = function(calorie) {													//takes in the variable calorie and adds this to the total calories
 	     
 		 $rootScope.count = $scope.count + calorie;
 		 //saves the value of the count
 		  Projects.save($rootScope.count);													//saves the value of total calories accross states
 	};
 	
-	//resets the calories to 0	//called by the reset button
-	$scope.functionReset = function() {
-	   //changes the scope to 0
-		 $rootScope.count = 0;
+
+	$scope.functionReset = function() {														//resets the calories to 0	//called by the reset button
+	   
+		 $rootScope.count = 0;																//changes the scope to 0 (The total Calories)
 	};
-	//shows the total in an alert box // called by the done button
-	//was only used in earlier versions
-	$scope.functionDone = function(tot){
-		alert(tot);
-	};
+	
+	
+	$scope.functionDone = function(tot){													//shows the total in an alert box 
+		alert("Total Calories: " + tot);													// called by the done button
+	};																						//was only used in earlier versions
   
   
   //list of all the foods, their image locations and their calories to be added to the states
