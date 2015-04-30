@@ -1,4 +1,4 @@
-angular.module('calorie.controllers', [])
+angular.module('calorie.controllers', [])	//to use this controller neeed to call ng-app="calorie" which is fdone in the index
 
 .controller('AppCtrl', function($scope) {
   $scope.categories = ['Drinks', 'Vegetables', 'Fruit', 'Meats'];
@@ -15,7 +15,7 @@ angular.module('calorie.controllers', [])
   }
 })
 
-
+//controller for the food template
 
 .controller('FoodsCtrl', function($scope,$rootScope,Projects, $stateParams) {
 	$rootScope.count = 0;
@@ -26,15 +26,17 @@ angular.module('calorie.controllers', [])
 	$scope.function1 = function(cals) {
 	     
 		 $rootScope.count = $scope.count + cals;
+		 //saves the value of the count
 		  Projects.save($rootScope.count);
 	};
 	
 	//resets the calories to 0	//called by the reset button
 	$scope.functionReset = function() {
-	   
+	   //changes the scope to 0
 		 $rootScope.count = 0;
 	};
 	//shows the total in an alert box // called by the done button
+	//not really used anymore
 	$scope.functionDone = function(tot){
 		alert(tot);
 	};
@@ -64,8 +66,6 @@ angular.module('calorie.controllers', [])
       {title: "Orange",		  imgsrc: "img/Orange.jpg",		 calories: 125},
       {title: "Strawberries", imgsrc: "img/Strawberries.jpg",calories: 125},
       {title: "Pear",		  imgsrc: "img/Pear.jpg",		 calories: 125},
- 
-   
     ],
     [
       {title:"Steak 100g",	 imgsrc: "img/Steak.png",	calories: 125},
