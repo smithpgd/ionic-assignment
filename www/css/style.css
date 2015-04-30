@@ -1,0 +1,19 @@
+
+.frame_look_feel {
+    background-color: lightgrey;
+}
+
+button {
+    text-align: right;
+}
+
+h3 {
+text-align: right;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 11%;
+    background-color: #b0e0e6;
+}

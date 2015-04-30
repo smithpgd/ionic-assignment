@@ -1,0 +1,39 @@
+
+
+	
+<ion-view class="frame_look_feel" view-title="{{ category }} ">
+
+  <ion-content> 
+    <ion-list>
+	<div ng-controller="FoodsCtrl" >
+	
+        <div class="list card"  ng-repeat="Food in Foods">
+			<div class="item item-avatar">
+				<img src ={{Food.imgsrc}}>  
+					{{ Food.title }} , Calories : {{Food.calories}}
+				<br>
+				</br>
+				<button ng-click="function1({{Food.calories}})"   class="button button-small button-balanced" >
+				Click To add 	
+				</button>
+			
+				<div style="float:right;">
+					<p>Total Calories:
+						<input type="text" ng-model="count" style="float: right;"/>
+					</p>
+				</div>
+			</div>
+	    </div>
+	    <div class ="center list card">
+			<button ng-click="functionReset()" class="button button-positive" style="float: right;">
+			Reset
+			</button>
+		
+			<button ng-click="functionDone(count)" class="button button-positive" style="float: right;">
+			Done
+			</button>
+		</div>
+	</div>
+    </ion-list>
+  </ion-content>
+</ion-view>
